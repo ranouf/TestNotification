@@ -27,6 +27,17 @@ namespace TestNotification
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            //Cors
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    config => config
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +63,9 @@ namespace TestNotification
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
+
+            //Cors
+            app.UseCors("CorsPolicy");
 
             app.UseSpa(spa =>
             {
