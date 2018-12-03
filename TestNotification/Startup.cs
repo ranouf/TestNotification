@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace TestNotification
 {
@@ -21,6 +21,16 @@ namespace TestNotification
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //Swagger-ui 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Title = "TestNotification",
+                    Version = "v1"
+                });
+            });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -52,6 +62,14 @@ namespace TestNotification
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            //Swagger-ui
+            app.UseSwagger(c => c.RouteTemplate = "api-endpoints/{documentName}/swagger.json");
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = "api-endpoints";
+                c.SwaggerEndpoint("v1/swagger.json", "AllInOne V1");
+            });
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
