@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace TestNotification.Controllers.Dtos.Entities
+﻿namespace TestNotification.Controllers.Dtos.Entities
 {
+    using System;
+
     public class EntityDto : EntityDto<Guid>
     {
     }

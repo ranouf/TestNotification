@@ -22,14 +22,16 @@ namespace TestNotification
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            //Swagger-ui 
+            // Swagger-ui 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info
-                {
-                    Title = "TestNotification",
-                    Version = "v1"
-                });
+                c.SwaggerDoc(
+                    "v1",
+                    new Info
+                    {
+                        Title = "TestNotification",
+                        Version = "v1"
+                    });
             });
 
             // In production, the Angular files will be served from this directory
@@ -38,10 +40,11 @@ namespace TestNotification
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            //Cors
+            // Cors
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
+                options.AddPolicy(
+                    "CorsPolicy",
                     config => config
                         .AllowAnyOrigin()
                         .AllowAnyMethod()
@@ -63,7 +66,7 @@ namespace TestNotification
                 app.UseHsts();
             }
 
-            //Swagger-ui
+            // Swagger-ui
             app.UseSwagger(c => c.RouteTemplate = "api-endpoints/{documentName}/swagger.json");
             app.UseSwaggerUI(c =>
             {
