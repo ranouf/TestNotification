@@ -1,16 +1,14 @@
 ﻿using Newtonsoft.Json;
-using System.Runtime.Serialization;
 using TestNotification.Converters;
 
 namespace TestNotification.Controllers.Dtos.Grouping
 {
     [JsonConverter(typeof(JsonInheritanceConverter))]
-    [KnownType(typeof(ItemDto<string>))]
-    [KnownType(typeof(ItemDto<UserDto>))]
-    [KnownType(typeof(ItemDto<NotificationDto>))]
-    [JsonSchemaFlatten]
-    public abstract class AbstractItemDto
+    [NJsonKnownTypeAttribute(typeof(ItemDto<string>))]
+    [NJsonKnownTypeAttribute(typeof(ItemDto<UserDto>))]
+    [NJsonKnownTypeAttribute(typeof(ItemDto<NotificationDto>))]
+    public interface IItemDto
     {
-        public abstract string Discriminator { get; }
+        string Discriminator { get; }
     }
 }

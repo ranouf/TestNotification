@@ -2,7 +2,7 @@
 
 namespace TestNotification.Controllers.Dtos.Grouping
 {
-    public class ItemDto<T> : AbstractItemDto
+    public class ItemDto<T> : IItemDto
         where T : IComparable
     {
         public T Key { get; set; }

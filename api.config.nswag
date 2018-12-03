@@ -11,7 +11,7 @@
       "defaultUrlTemplate": "api/{controller}/{id?}",
       "addMissingPathParameters": false,
       "includedVersions": null,
-      "defaultPropertyNameHandling": "Default",
+      "defaultPropertyNameHandling": "CamelCase",
       "defaultReferenceTypeNullHandling": "Null",
       "defaultEnumHandling": "Integer",
       "flattenInheritanceHierarchy": false,
@@ -47,7 +47,7 @@
       ],
       "assemblyConfig": null,
       "referencePaths": [
-        "C:/Program Files/dotnet/shared/Microsoft.NETCore.App/2.1.6",
+        "../../../../../../Program Files/dotnet/shared/Microsoft.NETCore.App/2.1.6",
         "TestNotification/bin/Release/netcoreapp2.1/publish",
         "TestNotification/bin/Release/netcoreapp2.1/References"
       ],
@@ -64,7 +64,7 @@
       "promiseType": "Promise",
       "httpClass": "HttpClient",
       "useSingletonProvider": false,
-      "injectionTokenType": "OpaqueToken",
+      "injectionTokenType": "InjectionToken",
       "rxJsVersion": 6.0,
       "dateTimeType": "Date",
       "nullValue": "Undefined",
@@ -89,7 +89,7 @@
       "typeStyle": "Class",
       "classTypes": [],
       "extendedClasses": [],
-      "extensionCode": "TestNotification/ClientApp/src/app/services/api.services.ts",
+      "extensionCode": "",
       "generateDefaultValues": true,
       "excludedTypeNames": [],
       "handleReferences": false,
@@ -105,7 +105,7 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": null
+      "output": "TestNotification/ClientApp/src/app/services/api.services.ts"
     }
   }
 }
