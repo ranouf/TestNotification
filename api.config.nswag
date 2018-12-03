@@ -2,15 +2,17 @@
   "runtime": "NetCore21",
   "defaultVariables": null,
   "swaggerGenerator": {
-    "webApiToSwagger": {
-      "controllerNames": [
-        "TestNotification.Controllers.NotificationController"
-      ],
-      "isAspNetCore": true,
-      "resolveJsonOptions": false,
-      "defaultUrlTemplate": "api/{controller}/{id?}",
-      "addMissingPathParameters": false,
-      "includedVersions": null,
+    "aspNetCoreToSwagger": {
+      "project": "TestNotification/TestNotification.csproj",
+      "msBuildProjectExtensionsPath": null,
+      "configuration": null,
+      "runtime": null,
+      "targetFramework": null,
+      "noBuild": false,
+      "verbose": true,
+      "workingDirectory": null,
+      "requireParametersWithoutDefault": false,
+      "apiGroupNames": null,
       "defaultPropertyNameHandling": "Default",
       "defaultReferenceTypeNullHandling": "Null",
       "defaultEnumHandling": "Integer",
@@ -42,16 +44,10 @@
       "allowNullableBodyParameters": true,
       "output": null,
       "outputType": "Swagger2",
-      "assemblyPaths": [
-        "TestNotification/bin/Debug/netcoreapp2.1/TestNotification.dll"
-      ],
+      "assemblyPaths": [],
       "assemblyConfig": null,
-      "referencePaths": [
-        "C:/Program Files/dotnet/shared/Microsoft.NETCore.App/2.1.6",
-        "TestNotification/bin/Release/netcoreapp2.1/publish",
-        "TestNotification/bin/Release/netcoreapp2.1/References"
-      ],
-      "useNuGetCache": true
+      "referencePaths": [],
+      "useNuGetCache": false
     }
   },
   "codeGenerators": {
